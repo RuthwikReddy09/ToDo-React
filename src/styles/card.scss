@@ -1,0 +1,100 @@
+@import "colors.scss";
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+.todo-card {
+    outline: 2px solid $border-color;
+    border-radius: 10px;
+    width: 70vw;
+    min-height: 70vh;
+    height: auto;
+    .input{
+        width: auto;
+        margin: auto;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        input{
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            width: 90%;
+            height: 40px;
+            border: none;
+            padding-left:4px;
+            border-right: 1px solid $border-color;
+        }
+        button{
+            height: 40px;
+            width: 9%;
+            font-size: large;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background-color: $text-color;
+            border: none;
+            text-decoration: none;
+            font-family: monospace;
+        }
+    }
+    .task {
+        width: auto;
+        height: auto;
+        min-height: 50px;
+        border-radius: 10px;
+        margin: 10px;
+        background-color: $text-color;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding: 5px;
+        font-family: monospace;
+        position: relative;
+
+        &:hover {
+ 
+            .delete {
+                display: block;
+                animation: fadeIn 0.5s ease;
+            }
+            
+        }
+        .add {
+            background-color: $text-color;
+            display: flex;
+            gap: 5px;
+            width: 100%;
+            .checkbox{
+                accent-color: $border-color;
+            }
+            .data {
+                cursor: pointer;
+                user-select: none;
+                background-color: $text-color;
+                display: inline;
+                max-width: 80%;
+                word-wrap:break-word;
+            }
+        }
+   
+        .delete {
+        display: none;
+        color: black;
+        font-family: monospace;
+        padding-right: 5px;
+        }
+    }
+
+}
+@media (max-width:420px){
+    .todo-card {
+        .input{
+            button{
+                width: 100px;
+            }
+        }
+    }
+}

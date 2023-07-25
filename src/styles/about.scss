@@ -1,0 +1,33 @@
+
+@import "colors.scss";
+
+    .about{
+        max-width: 70vw;
+        min-height: 70vh;
+        word-wrap: break-word;
+        outline: 2px solid $border-color;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 25px;
+        text-align: center;
+        font-family: monospace;
+        font-size: large;
+        color:$text-color;
+        .contact{
+            margin: 10px;
+            a{
+                text-decoration:underline;
+                color: $text-color;
+            }
+        }
+    }
+@media (max-width:230px){
+    .about{
+        background-color: $primary;
+        width: 100vh;
+        height: 170vh;
+    }
+}

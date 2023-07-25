@@ -1,0 +1,14 @@
+@import "./styles/colors.scss";
+@import "./styles/navbar.scss";
+@import "./styles/card.scss";
+@import "./styles/home.scss";
+@import "./styles/about.scss";
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.App{
+  
+  background-color: $primary;
+
+}
