@@ -1,6 +1,5 @@
 import React, {useState } from 'react'
 import { MdDelete } from "react-icons/md"
-import { GrUpdate } from "react-icons/gr"
 function Todo() {
   const [change, setChange] = useState(false);
   const [newTodo, setNewTodo] = useState("");
@@ -9,10 +8,6 @@ function Todo() {
     temp.push(JSON.parse(localStorage.getItem(key)));
   });
   const deleteTodo = (key) => {
-    localStorage.removeItem(key);
-    setChange(!change);
-  }
-  const updateTodo = (key) => {
     localStorage.removeItem(key);
     setChange(!change);
   }
@@ -51,15 +46,12 @@ function Todo() {
         return (
           <div className='task' key={data.key}>
             <div className="add" id="add">
-            {/* <input type='checkbox' name="done" id="done"   />   */}
             <input type='checkbox' name="done" id="done" className="checkbox" checked={data.flag} onChange={(e) => doneTodo(e,data.key)} />
             {!data.flag ? <p className="data" id={data.key} onClick={(e) => doneTodo(e,data.key)}>{data.task}</p>:<p className="data" id={data.key} style={{ textDecoration: "line-through" }} key={data.key} onClick={(e) => doneTodo(e,data.key)}>{data.task}</p>}
             </div>
-           
               <div className="delete" onClick={() => deleteTodo(data.key)}>
                 <MdDelete size={20} />
               </div>
-          
           </div>
         )
       }
